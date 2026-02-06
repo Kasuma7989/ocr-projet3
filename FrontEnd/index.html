@@ -74,6 +74,51 @@
 		</ul>
 	</nav>
 </footer>
+
+<aside id="modal" class="modal" style="display: none;">
+	<div class="modal-wrapper">
+		<div class="modal-content">
+			<button class="modal-close">
+				<i class="fa-solid fa-xmark"></i>
+			</button>
+			
+			
+			<div id="modal-gallery-view" class="modal-view">
+				<h3>Galerie photo</h3>
+				<div class="modal-gallery">
+				</div>
+				<hr>
+				<button id="modal-add-button" class="modal-button">Ajouter une photo</button>
+			</div>
+			
+			
+			<div id="modal-add-view" class="modal-view" style="display: none;">
+				<button class="modal-back">
+					<i class="fa-solid fa-arrow-left"></i>
+				</button>
+				<h3>Ajout photo</h3>
+				<form id="add-work-form" class="modal-form">
+					<div class="form-preview">
+						<i class="fa-regular fa-image"></i>
+						<label for="work-image" class="preview-button">+ Ajouter photo</label>
+						<input type="file" id="work-image" accept="image/png, image/jpeg" style="display: none;">
+						<p>jpg, png : 4mo max</p>
+						<img id="image-preview" style="display: none;">
+					</div>
+					<label for="work-title">Titre</label>
+					<input type="text" id="work-title" name="title" required>
+					<label for="work-category">Catégorie</label>
+					<select id="work-category" name="category" required>
+						<option value=""></option>
+					</select>
+					<hr>
+					<button type="submit" class="modal-button" id="submit-button" disabled>Valider</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</aside>
+
 <script src="./Js/scripts.js"></script>
 </body>
 </html>
