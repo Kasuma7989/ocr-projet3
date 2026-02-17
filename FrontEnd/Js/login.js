@@ -1,17 +1,20 @@
 const apiUrl = "http://localhost:5678/api";
 
+// Récupère le formulaire de connexion
 const loginForm = document.getElementById("login-form");
 
+// Gère la soumission du formulaire
 loginForm.addEventListener("submit", function(event) {
-  event.preventDefault();
+  event.preventDefault(); // Empêche le rechargement de la page
   
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   
+  // Envoie les identifiants à l'API
   fetch(`${apiUrl}/users/login`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json" // Indique quon envoie du json
     },
     body: JSON.stringify({
       email: email,
@@ -34,9 +37,12 @@ loginForm.addEventListener("submit", function(event) {
   });
 });
 
+
+// Affiche un message d'erreur sous le formulaire
 function showError(message) {
   let errorElement = document.querySelector(".error-message");
   
+  // Si le message d'erreur n'existe pas encore, on le crée
   if (!errorElement) {
     errorElement = document.createElement("p");
     errorElement.classList.add("error-message");
